@@ -6,7 +6,7 @@
 // 项目类型：Win32 Application
 //---------------------------------------------------------
 
-#include <easy2d.h>
+#include <easy2d/easy2d.h>
 #include "resource.h"
 #include "StartScene.h"
 #include "Data.h"

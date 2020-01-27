@@ -1,7 +1,6 @@
 #include "PlayScene.h"
 #include "SuccessScene.h"
 
-
 PlayScene::PlayScene(int level)
 {
 	// 创建字体
@@ -44,25 +43,25 @@ PlayScene::PlayScene(int level)
 void PlayScene::onUpdate()
 {
 	// 按 ESC 返回上一场景
-	if (Input::isPress(Key::Esc)) {
+	if (Input::isPress(KeyCode::Esc)) {
 		SceneManager::back();
 	}
 	// 按回车重新开始
-	if (Input::isPress(Key::Enter)) {
+	if (Input::isPress(KeyCode::Enter)) {
 		SetLevel(g_CurrentLevel);
 	}
 
 	// 按上下左右移动人物
-	if (Input::isPress(Key::Up)) {
+	if (Input::isPress(KeyCode::Up)) {
 		Move(0, -1, 1);
 	}
-	else if (Input::isPress(Key::Down)) {
+	else if (Input::isPress(KeyCode::Down)) {
 		Move(0, 1, 2);
 	}
-	else if (Input::isPress(Key::Left)) {
+	else if (Input::isPress(KeyCode::Left)) {
 		Move(-1, 0, 3);
 	}
-	else if (Input::isPress(Key::Right)) {
+	else if (Input::isPress(KeyCode::Right)) {
 		Move(1, 0, 4);
 	}
 	else {
@@ -91,7 +90,7 @@ void PlayScene::onUpdate()
 void PlayScene::Flush()
 {
 	// 清除原地图
-	mapLayer->clearAllChildren();
+	mapLayer->removeAllChildren();
 	// 加载地图
 	for (int i = 0; i < map.width; i++) {
 		for (int j = 0; j < map.height; j++) {
@@ -283,8 +282,9 @@ void PlayScene::GameOver()
 	}
 	// 若已经是最后一关，显示通关界面
 	if (::g_CurrentLevel == MAX_LEVEL) {
-		// 第二个参数 false 表示不会再返回当前场景
-		SceneManager::enter(gcnew SuccessScene(), false);
+		auto successScene = gcnew SuccessScene;
+		// 第三个参数 false 表示不会再返回当前场景
+		SceneManager::enter(successScene, nullptr, false);
 		return;
 	}
 	// 进入下一关
