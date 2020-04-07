@@ -1,8 +1,7 @@
 //---------------------------------------------------------
 // 程序名称：推箱子
 // 作者：Nomango
-// 最后更新：2018-3-14
-// 编译环境：Visual Studio 2017 / Easy2D v2.0.0-beta6
+// 编译环境：Visual Studio 2017 / Easy2D v2.0.4
 // 项目类型：Win32 Application
 //---------------------------------------------------------
 
@@ -33,7 +32,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		// 开始游戏
 		Game::start();
 	}
-	
+
 	// 回收游戏资源
 	Game::destroy();
 	return 0;

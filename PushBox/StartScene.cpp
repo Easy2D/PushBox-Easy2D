@@ -39,7 +39,8 @@ StartScene::StartScene()
 	// 设置按钮位置
 	resumeBtn->setPos(Window::getWidth() / 2, 300);
 	// 若当前关卡是第一关，禁用这个按钮
-	if (g_CurrentLevel == 1) {
+	if (g_CurrentLevel == 1)
+	{
 		resumeBtn->setEnable(false);
 	}
 	// 设置按钮回调函数
@@ -71,10 +72,12 @@ StartScene::StartScene()
 void StartScene::onEnter()
 {
 	// 当前关卡不为 1 时，可以继续游戏
-	if (g_CurrentLevel == 1) {
+	if (g_CurrentLevel == 1)
+	{
 		resumeBtn->setEnable(false);
 	}
-	else {
+	else
+	{
 		resumeBtn->setEnable(true);
 	}
 }
