@@ -17,9 +17,9 @@ StartScene::StartScene()
 	auto fontDisable = Font(L"新宋体", 28, Font::Weight::Bold);
 
 	// 创建样式
-	auto styleNormal = Text::Style(Color::Black);
-	auto styleSelect = Text::Style(Color::Blue);
-	auto styleDisable = Text::Style(Color::LightGray);
+	auto styleNormal = DrawingStyle(Color::Black);
+	auto styleSelect = DrawingStyle(Color::Blue);
+	auto styleDisable = DrawingStyle(Color::LightGray);
 
 	// 创建开始游戏按钮
 	auto startBtn = gcnew Button();

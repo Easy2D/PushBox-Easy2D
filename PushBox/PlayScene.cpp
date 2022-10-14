@@ -253,7 +253,7 @@ void PlayScene::Move(int x, int y, int direct)
 		// 角色正在推箱子
 		g_Pushing = true;
 		// 根据角色方向判断箱子前方是不是墙
-		int boxX, boxY;
+		int boxX = 0, boxY = 0;
 		if (g_Direct == 1)
 		{
 			boxX = x;
