@@ -1,5 +1,6 @@
 #include "PlayScene.h"
 #include "SuccessScene.h"
+#include "Buttons.h"
 
 PlayScene::PlayScene(int level)
 {
@@ -31,6 +32,11 @@ PlayScene::PlayScene(int level)
 	auto restartText = gcnew Text(L"按回车重开", font2);
 	restartText->setPos(520, 290);
 	this->addChild(restartText);
+
+	// 声音开关按钮
+	auto soundBtn = gcnew SoundButton();
+	soundBtn->setPos(520, 330);
+	this->addChild(soundBtn);
 
 	// 添加地图部分
 	mapLayer = gcnew Node();

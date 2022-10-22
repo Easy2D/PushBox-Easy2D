@@ -1,5 +1,5 @@
-#include <easy2d/easy2d.h>
-using namespace easy2d;
+#pragma once
+#include "Buttons.h"
 
 class StartScene : 
 	public Scene
@@ -17,12 +17,9 @@ public:
 	// 退出游戏
 	void Exit();
 
-	// 打开或关闭声音
-	void Sound();
-
 protected:
-	// 声音开关
-	Button* soundBtn;
 	// 继续游戏按钮
-	Button* resumeBtn;
+	MyTextButton* resumeBtn;
+	// 音乐开关按钮
+	SoundButton* soundBtn;
 };
