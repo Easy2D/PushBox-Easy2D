@@ -5,14 +5,14 @@
 StartScene::StartScene()
 {
 	// 添加背景图
-	auto background = gcnew Sprite(L"res/start.jpg");
+	auto background = gcnew Sprite("res/start.jpg");
 	this->addChild(background);
 
 	// 修改节点默认中心点位置
 	Node::setDefaultAnchor(0.5, 0.5);
 
 	// 创建开始游戏按钮
-	auto startBtn = gcnew MyTextButton(L"新游戏", [=]() {
+	auto startBtn = gcnew MyTextButton("新游戏", [=]() {
 		this->Start();
 		});
 	// 设置按钮位置
@@ -20,7 +20,7 @@ StartScene::StartScene()
 	this->addChild(startBtn);
 
 	// 继续游戏按钮
-	resumeBtn = gcnew MyTextButton(L"继续关卡", [=]() {
+	resumeBtn = gcnew MyTextButton("继续关卡", [=]() {
 		this->Continue();
 		});
 	// 设置按钮位置
@@ -33,7 +33,7 @@ StartScene::StartScene()
 	this->addChild(resumeBtn);
 
 	// 创建退出按钮
-	auto exitBtn = gcnew MyTextButton(L"退出", [=]() {
+	auto exitBtn = gcnew MyTextButton("退出", [=]() {
 		this->Exit();
 		});
 	// 设置按钮位置

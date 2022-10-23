@@ -8,7 +8,7 @@ static DrawingStyle buttonDisabledStyle = DrawingStyle(Color::LightGray);
 MyTextButton::MyTextButton(const String& text, Function<void()> callback)
 {
 	this->setText(text);
-	this->setFont(Font(L"新宋体", 28, Font::Weight::Bold));
+	this->setFont(Font("新宋体", 28, Font::Weight::Bold));
 	this->setDrawingStyle(buttonNormalStyle);
 
 	// 添加按钮监听器
@@ -46,7 +46,7 @@ void MyTextButton::setEnable(bool enable)
 
 SoundButton::SoundButton()
 {
-	static auto sound = L"res/background.wav";
+	static auto sound = "res/background.wav";
 
 	lis = gcnew ToggleButtonListener(g_SoundOpen, [=](ButtonEvent evt, bool state) {
 		if (evt == ButtonEvent::Clicked) {
@@ -63,7 +63,7 @@ SoundButton::SoundButton()
 			g_SoundOpen = state;
 			this->setState(state);
 			// 保存信息到文件
-			Data::saveBool(L"sound", g_SoundOpen);
+			Data::saveBool("sound", g_SoundOpen);
 		}
 		});
 	this->addListener(lis);
@@ -78,7 +78,7 @@ void SoundButton::updateStatus()
 
 void SoundButton::setState(bool state)
 {
-	static auto soundon = L"res/soundon.png";
-	static auto soundoff = L"res/soundoff.png";
+	static auto soundon = "res/soundon.png";
+	static auto soundoff = "res/soundoff.png";
 	this->open(state ? soundon : soundoff);
 }

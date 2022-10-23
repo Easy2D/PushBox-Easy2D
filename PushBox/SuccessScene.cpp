@@ -4,13 +4,13 @@
 SuccessScene::SuccessScene()
 {
 	// 背景图片
-	auto background = gcnew Sprite(L"res/success.jpg");
+	auto background = gcnew Sprite("res/success.jpg");
 	this->addChild(background);
 
 	// 回主菜单按钮
 	auto backBtn = gcnew Button();
-	backBtn->setNormal(gcnew Text(L"回主菜单", Font(L"新宋体", 28, Font::Weight::Bold), DrawingStyle(Color::Black)));
-	backBtn->setMouseOver(gcnew Text(L"回主菜单", Font(L"新宋体", 28, Font::Weight::Bold), DrawingStyle(Color::Blue)));
+	backBtn->setNormal(gcnew Text("回主菜单", Font("新宋体", 28, Font::Weight::Bold), DrawingStyle(Color::Black)));
+	backBtn->setMouseOver(gcnew Text("回主菜单", Font("新宋体", 28, Font::Weight::Bold), DrawingStyle(Color::Blue)));
 	backBtn->setPos(255, 350);
 	// 设置回调函数
 	backBtn->setClickFunc([]()
